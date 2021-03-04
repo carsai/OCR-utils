@@ -9,6 +9,23 @@ const validarFichero = (req, res, next) => {
     })
   }
 
+  const ficherosValidos = ['jpg', 'pdf']
+  const extension = req.files[0].originalname.match(/.+\.(.+)$/)[1]
+  let valido = false
+  for (const f of ficherosValidos) {
+    if (f === extension) {
+      valido = true
+      break
+    }
+  }
+
+  if (!valido) {
+    return res.status(400).json({
+      ok: false,
+      mensaje: `Solo se admite ficheros con las extensiones: ${ficherosValidos.join(' / ')}`
+    })
+  }
+
   next()
 }
 

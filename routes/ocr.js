@@ -3,6 +3,10 @@ const app = express.Router()
 const { ejecutarOCR } = require('../controller/ocr')
 const validarFichero = require('../middleware/validarFichero')
 
-app.post('/', validarFichero, ejecutarOCR)
+app.post(
+  '/',
+  validarFichero,
+  ejecutarOCR
+)
 
 module.exports = app

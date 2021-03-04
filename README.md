@@ -23,6 +23,7 @@ OCR_KEY=key
 
 # LOG
 LOG_LEVEL=combined
+LOG_FICHERO=Si tiene valor S se creara un fichero de log
 ```
 
 &nbsp;
@@ -31,7 +32,7 @@ LOG_LEVEL=combined
 
 &nbsp;
 
-## Convertir imagen a texto
+## Convertir imagen o pdf a texto
 
 Esta api se le proporciona una imagen y devuelve un JSON con el texto que contenga dicha imagen.
 
@@ -80,3 +81,17 @@ FORM-DATA:
     "mensaje": "Fichero obligatorio"
 }
 ```
+
+---
+
+**Condición** : Fichero que no es imagen ni pdf.
+
+**Código** : `400 Petición mala`
+
+**Contenido** :
+
+```json
+{
+    "ok": false,
+    "mensaje": "Solo se admite ficheros con las extensiones: jpg / pdf"
+}
