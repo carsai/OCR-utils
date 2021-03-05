@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "OCR utils",
   "version": "1.0.0",
   "description": "APIS de utilidades",
   "main": "server.js",
